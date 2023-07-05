@@ -20,7 +20,7 @@ This program emails and messages you flight deals from now to 6 months in the fu
    - Change the phone numbers to your Twilio Assigned Number and your personal phone number within the `notification_class.py` in the `notify` method
 
 ## Demo
-The spreadsheet with our desired prices and locations. The program automatically fills in the IATA codes for you as well!
+The spreadsheet with our desired prices and locations. The program automatically fills in the IATA codes for you!
 ![Screenshot 2023-07-04 at 11 43 21 PM](https://github.com/ishan-juneja/Personal-Flight-Club/assets/69048541/d35e7a4f-90d0-49ed-ad28-e9ce995d6d55)
 
 The programs sifts through the API data to retrieve us the relevant prices we want and compares them to what we had previously specified. 
