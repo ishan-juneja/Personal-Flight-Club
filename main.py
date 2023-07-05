@@ -16,6 +16,7 @@ for row in sheet_data:
     row_number = data_manager.row_number(row["city"])
     code = search_engine.search_code(row["city"])
     flight_price = search_engine.find_flight_price(code)
+    print(flight_price)
     if flight_price == None:
         continue
     else:

@@ -29,7 +29,6 @@ class Flight():
         return code
 
     def find_flight_price(self, code, stopovers=0):
-        print(stopovers)
         header = {
             "apikey": API_KEY
         }
@@ -38,15 +37,17 @@ class Flight():
         # dd/mm/YY
         d1 = today.strftime("%d/%m/%Y")
         month = d1[3:5]
+        year = int(d1[6:10])
         num = int(month) + 6
         if(num > 12):
             num = num%12
         if(num < 10):
             num = "0" + str(num)
+            year += 1
         else:
             num = str(num)
 
-        d2 = today.strftime(f"%d/{str(num)}/%Y")
+        d2 = today.strftime(f"%d/{str(num)}/{str(year)}")
 
         params = {
             "fly_from": HOME_CODE,
@@ -63,6 +64,7 @@ class Flight():
 
         flight_details = requests.get(SERVER2, params=params, headers=header)
         flight_details = flight_details.json()
+        print(flight_details)
 
         try:
            return(flight_details["data"][0])
